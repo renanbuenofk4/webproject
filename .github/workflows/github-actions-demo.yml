@@ -1,0 +1,44 @@
+ame: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build-job:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 20 # Especifique a versão do Node.js que você deseja usar
+
+  test-job:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 20 # Especifique a versão do Node.js que você deseja usar
+    - run: npm install # Instala as dependências do projeto
+    - run: npm test # Executa os testes do projeto
+
+  deploy-job:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14' # Especifique a versão do Node.js que você deseja usar
+    - run: npm install # Instala as dependências do projeto
+    - run: npm run build # Execute qualquer comando de construção ou compilação
+    - run: echo "Finalizado!"
