@@ -16,7 +16,7 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: 20 # Especifique a versão do Node.js que você deseja usar
+        node-version: 20 
 
   test-job:
     runs-on: ubuntu-latest
@@ -26,7 +26,7 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: 20 # Especifique a versão do Node.js que você deseja usar
+        node-version: 20 
     - run: npm install # Instala as dependências do projeto
     - run: npm test # Executa os testes do projeto
 
@@ -38,7 +38,7 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '14' # Especifique a versão do Node.js que você deseja usar
+        node-version: 20 
     - run: npm install # Instala as dependências do projeto
     - run: npm run build # Execute qualquer comando de construção ou compilação
-    - run: echo "Finalizado!"
+    - run: echo "Finalizado!
